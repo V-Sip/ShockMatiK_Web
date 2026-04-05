@@ -260,6 +260,6 @@ body {
         grid-template-columns: 1fr; 
     }
     .accent-line {
-        width: 70%;
+        width: 80px;
     }
 }
