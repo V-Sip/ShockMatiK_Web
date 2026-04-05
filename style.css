@@ -259,4 +259,7 @@ body {
     .hw-image-group {
         grid-template-columns: 1fr; 
     }
+    .accent-line {
+        width: 70%;
+    }
 }
