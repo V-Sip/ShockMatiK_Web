@@ -1,0 +1,262 @@
+/* =========================================
+   barvicke a pozadi
+   ========================================= */
+:root {
+    --pico-primary: #ff5722;
+    --pico-primary-hover: #e64a19;
+    --pico-primary-focus: rgba(255, 87, 34, 0.25);
+    --pico-background-color: #0a0e14;
+}
+
+body {
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 30px 30px;
+    background-attachment: fixed;
+}
+
+/* =========================================
+   pismenka
+   ========================================= */
+.hero-title {
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: -webkit-linear-gradient(#ffffff, #888888);
+    background-clip: text;
+    -webkit-background-clip: text; /* pro jablicka prej */
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.5rem;
+}
+
+.accent-line {
+    height: 4px;
+    width: 550px;
+    background: var(--pico-primary);
+    border-radius: 2px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 0 10px rgba(255, 87, 34, 0.5);
+}
+
+.accent-line.centered {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* =========================================
+   kartofle
+   ========================================= */
+.tech-card {
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 12px;
+    padding: 30px;
+    margin-bottom: 40px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 87, 34, 0.4);
+    box-shadow: 0 10px 30px -10px rgba(255, 87, 34, 0.2);
+}
+
+.inner-box {
+    background: rgba(0,0,0,0.2);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.inner-box h3 {
+    color: var(--pico-primary);
+    font-size: 1.4rem;
+}
+
+.highlight-box {
+    background: rgba(0,0,0,0.3); 
+    padding: 20px; 
+    border-radius: 8px;
+    border-left: 4px solid var(--pico-primary);
+}
+
+.tech-list li {
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+    color: #cfcfcf;
+}
+
+.tech-list strong {
+    color: var(--pico-primary);
+}
+
+/* =========================================
+   vopicarny hejbaci
+   ========================================= */
+
+.hover-trigger {
+    cursor: default;
+    transition: background 0.3s ease, border-color 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.hover-trigger:hover {
+    background: rgba(255, 87, 34, 0.05);
+    border-color: rgba(255, 87, 34, 0.3);
+}
+
+.image-stack {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.6s ease-out, opacity 0.6s ease-out, margin-top 0.6s ease;
+    margin-top: 0;
+    perspective: 1000px;
+}
+
+.telemetry-image {
+    grid-column: 1;
+    grid-row: 1;
+    justify-self: center;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.6);
+    max-width: 100%;
+    height: auto;
+    cursor: zoom-in; 
+    opacity: 0;
+    transform: rotateX(45deg) scale(0.9);
+    transition: opacity 0.5s ease, transform 0.6s ease-out;
+    pointer-events: none; 
+}
+
+/* rozvali stverec kdyz nafasuje tridu .is-active */
+.image-stack.is-active {
+    max-height: 95000px;
+    opacity: 1;
+    margin-top: 30px;
+}
+
+.hover-trigger {
+    cursor: pointer;
+    transition: background 0.3s ease, border-color 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.image-stack.show-sw-default .img-default {
+    opacity: 1;
+    transform: rotateX(0deg) rotateY(0deg);
+    pointer-events: auto; /* Zrušíme mu duší stav, aby šel prokliknout */
+}
+
+.image-stack.show-img-1 .img-1 {
+    opacity: 1;
+    transform: rotateX(0deg) rotateY(0deg);
+    pointer-events: auto; 
+}
+
+.image-stack.show-img-2 .img-2 {
+    opacity: 1;
+    transform: rotateX(0deg) rotateY(0deg);
+    pointer-events: auto; 
+}
+
+.buttons-container {
+    position: relative;
+    z-index: 10;
+}
+
+
+/* =========================================
+   zvetsovatko vobrazku
+   ========================================= */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(10, 14, 20, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    z-index: 9999; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    cursor: zoom-out; 
+}
+
+.modal-overlay.is-open {
+    opacity: 1;
+    pointer-events: all;
+}
+
+
+#modalImage {
+    max-width: 90vw; 
+    max-height: 90vh; 
+    border-radius: 12px;
+    border: 1px solid rgba(255, 87, 34, 0.3); 
+    box-shadow: 0 25px 50px rgba(0,0,0,0.8); 
+    transform: scale(0.9);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.modal-overlay.is-open #modalImage {
+    transform: scale(1);
+}
+
+/* =========================================
+   dvojty vobrazky (Hardware)
+   ========================================= */
+.hw-image-group {
+    grid-column: 1;
+    grid-row: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 20px; 
+    opacity: 0;
+    transform: rotateX(45deg) scale(0.9);
+    transition: opacity 0.5s ease, transform 0.6s ease-out;
+    pointer-events: none; 
+}
+
+
+.hw-image-group .telemetry-image {
+    opacity: 1;
+    transform: none;
+    grid-column: auto;
+    grid-row: auto;
+    pointer-events: inherit;
+}
+/* default */
+.hw-image-stack.show-hw-default .hw-group-default {
+    opacity: 1;
+    transform: rotateX(0deg) rotateY(0deg);
+    pointer-events: auto;
+}
+/* pixle */
+.hw-image-stack.show-hw-1 .hw-group-1 {
+    opacity: 1;
+    transform: rotateX(0deg) rotateY(0deg);
+    pointer-events: auto;
+}
+
+/* vp */
+.hw-image-stack.show-hw-2 .hw-group-2 {
+    opacity: 1;
+    transform: rotateX(0deg) rotateY(0deg);
+    pointer-events: auto;
+}
+
+
+
+
+@media (max-width: 768px) {
+    .hw-image-group {
+        grid-template-columns: 1fr; 
+    }
+}
