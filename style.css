@@ -146,7 +146,7 @@ body {
 .image-stack.show-sw-default .img-default {
     opacity: 1;
     transform: rotateX(0deg) rotateY(0deg);
-    pointer-events: auto; /* Zrušíme mu duší stav, aby šel prokliknout */
+    pointer-events: auto;
 }
 
 .image-stack.show-img-1 .img-1 {
