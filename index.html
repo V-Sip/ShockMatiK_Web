@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="cs" data-theme="dark">
 <!-- Co tu hledas, loupezniku? -->
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +9,14 @@
     <link rel="icon" type="image/x-icon" href="icon.ico">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
     <link rel="stylesheet" href="style.css">
-
+    <meta property="og:title" content="ShockMatiK | Telemetrie odpružení">
+    <meta property="og:description"
+        content="Měřicí systém pro in situ zaznamenávání zdvihu tlumičů a zrychlení odpružené hmoty, navržený pro optimalizaci sportovních podvozků.">
+    <meta property="og:image" content="https://shockmatik.com/pixle.png">
+    <meta property="og:url" content="https://shockmatik.com/">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://shockmatik.com/telemetry_med_2.png">
 </head>
 
 <body>
@@ -31,14 +39,17 @@
             <div class="grid" style="margin-top: 30px;">
                 <div class="inner-box hover-trigger hw-trigger-1" onclick="showHardwareImage(1)">
                     <h3>4x Měřicí jednotka</h3>
-                    <p style="font-size: 0.95rem;">Pomocí lineárních snímačů, připevněných paralelně k tlumičům, zaznamenávájí jejich zdvih v čase a díky vestavěným akcelerometrům také snímají zrychlení odpružené hmoty ve třech osách.
+                    <p style="font-size: 0.95rem;">Pomocí lineárních snímačů, připevněných paralelně k tlumičům,
+                        zaznamenávájí jejich zdvih v čase a díky vestavěným akcelerometrům také snímají zrychlení
+                        odpružené hmoty ve třech osách.
                     </p>
                 </div>
                 <div class="inner-box hover-trigger hw-trigger-2" onclick="showHardwareImage(2)">
                     <h3>Centrální řídicí jednotka</h3>
                     <p style="font-size: 0.95rem;">Bezdrátově řídí a synchronizuje všechny měřicí jednotky.
                         Nasbíraná data následně přenese do počítače pomocí <strong>USB</strong> nebo bezdrátově přes
-                        <strong>Wi-Fi</strong>.</p>
+                        <strong>Wi-Fi</strong>.
+                    </p>
                 </div>
             </div>
 
@@ -72,28 +83,37 @@
             <div class="grid" style="margin-top: 30px;">
                 <div class="inner-box hover-trigger trigger-1" onclick="showSoftwareImage(1)">
                     <h3>Project manager</h3>
-                    <p style="font-size: 0.95rem;">Desktopová aplikace pro Windows, která slouží ke stažení a organizaci naměřených dat z hardwarové jednotky. Umožňuje efektivní třídění dat do projektů a ukládání doplňujicích detailů k jednotlivým měřením.</p>
+                    <p style="font-size: 0.95rem;">Desktopová aplikace pro Windows, která slouží ke stažení a organizaci
+                        naměřených dat z hardwarové jednotky. Umožňuje efektivní třídění dat do projektů a ukládání
+                        doplňujicích detailů k jednotlivým měřením.</p>
                 </div>
                 <div class="inner-box hover-trigger trigger-2" onclick="showSoftwareImage(2)">
                     <h3>Telemetry Analyzer</h3>
-                    <p style="font-size: 0.95rem;">Integrovaný analytický nástroj pro intuitivní vizualizaci dat a jejich vyhodnocení. Disponuje měřícími kurzory s automatickým výpočtem frekvence kmitání odpružené i neodpružené hmoty a pokročilými matematickými metodami pro eliminaci nepodstatných vibrací.
+                    <p style="font-size: 0.95rem;">Integrovaný analytický nástroj pro intuitivní vizualizaci dat a
+                        jejich vyhodnocení. Disponuje měřícími kurzory s automatickým výpočtem frekvence kmitání
+                        odpružené i neodpružené hmoty a pokročilými matematickými metodami pro eliminaci nepodstatných
+                        vibrací.
                     </p>
                 </div>
             </div>
 
             <div class="buttons-container" style="text-align: center; margin-top: 40px; margin-bottom: 10px;">
-                <a href="https://github.com/V-Sip/ShockMatiK_Suite/releases/download/v1.4.1/ShockMatiK_Suite_setup_v1.4.1.exe" role="button" class="contrast" style="font-weight: bold; letter-spacing: 1px;">Stáhnout
+                <a href="https://github.com/V-Sip/ShockMatiK_Suite/releases/download/v1.4.1/ShockMatiK_Suite_setup_v1.4.1.exe"
+                    role="button" class="contrast" style="font-weight: bold; letter-spacing: 1px;">Stáhnout
                     ShockMatiK Suite</a>
                 <a href="details.html" role="button" class="secondary outline">Podrobná
                     technická specifikace</a>
             </div>
             <div class="image-stack sw-image-stack is-active show-sw-default">
-                
-                <img src="telemetry_med_2.png" alt="Ukázka Telemetry Analyzer" class="telemetry-image img-default" onclick="openModal(this.src)">
 
-                <img src="SM_Suite.png" alt="Zpracování a export dat" class="telemetry-image img-1" onclick="openModal(this.src)">
-                
-                <img src="telemetry_med_2.png" alt="Ukázka Telemetry Analyzer" class="telemetry-image img-2" onclick="openModal(this.src)">
+                <img src="telemetry_med_2.png" alt="Ukázka Telemetry Analyzer" class="telemetry-image img-default"
+                    onclick="openModal(this.src)">
+
+                <img src="SM_Suite.png" alt="Zpracování a export dat" class="telemetry-image img-1"
+                    onclick="openModal(this.src)">
+
+                <img src="telemetry_med_2.png" alt="Ukázka Telemetry Analyzer" class="telemetry-image img-2"
+                    onclick="openModal(this.src)">
             </div>
         </section>
     </main>
