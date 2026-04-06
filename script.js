@@ -12,18 +12,12 @@ function showSoftwareDetail(detailNumber) {
         stack.classList.add('show-sw-default');
     }
     else {
-
         panel.querySelectorAll('.detail-content').forEach(content => content.classList.remove('is-active'));
-
         clickedBox.classList.add('is-active');
         panel.classList.add('is-active');
         document.getElementById('sw-detail-' + detailNumber).classList.add('is-active');
-
         stack.classList.remove('show-sw-default', 'show-img-1', 'show-img-2');
         stack.classList.add('show-img-' + detailNumber);
-
-
-
     }
 }
 
@@ -57,7 +51,6 @@ function showHardwareDetail(detailNumber) {
 function openModal(imageSrc) {
     const modal = document.getElementById('imageModal');
     const modalImg = document.getElementById('modalImage');
-
     modalImg.src = imageSrc;
     modal.classList.add('is-open');
 }
