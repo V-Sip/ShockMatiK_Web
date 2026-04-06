@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShockMatiK | Suspension Telemetry</title>
+    <link rel="icon" type="image/x-icon" href="../icon.ico">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="canonical" href="https://shockmatik.com/en/">
+    <link rel="alternate" hreflang="cs" href="https://shockmatik.com/" />
+    <link rel="alternate" hreflang="en" href="https://shockmatik.com/en/" />
+    <link rel="alternate" hreflang="x-default" href="https://shockmatik.com/en/" />
+    <meta property="og:title" content="ShockMatiK | Suspension Telemetry">
+    <meta property="og:description"
+        content="Measurement system designed for in situ recording of suspension travel and sprung mass acceleration, optimizing your sports suspension setup.">
+    <meta property="og:image" content="https://shockmatik.com/pixle.png">
+    <meta property="og:url" content="https://shockmatik.com/en/">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://shockmatik.com/telemetry_med_2.png">
+</head>
+
+<body>
+    <main class="container">
+        <div
+            style="text-align: right; padding-top: 15px; margin-bottom: -15px; font-size: 0.9rem; letter-spacing: 1px;">
+            <a href="../" style="color: #a0a0a0; text-decoration: none; transition: color 0.2s;"
+                onmouseover="this.style.color='var(--pico-primary)'" onmouseout="this.style.color='#a0a0a0'">CZ</a>
+            <span style="color: #555; margin: 0 8px;">|</span>
+            <strong style="color: var(--pico-primary);">EN</strong>
+        </div>
+
+        <article style="text-align: center; margin-top: 50px; background: transparent; box-shadow: none; padding: 0;">
+            <img src="../logo.png" alt="ShockMatiK Logo" style="max-height: 220px; margin-bottom: 20px;">
+            <p style="font-size: 1.2rem; color: #a0a0a0; max-width: 600px; margin: 0 auto;">A comprehensive telemetry
+                system engineered for precise analysis and advanced tuning of motorsport suspensions.</p>
+        </article>
+
+        <div style="margin-top: 60px;"></div>
+
+        <section class="tech-card hardware-card">
+            <h2 style="text-align: center; margin-bottom: 10px;">Hardware: Track to PC, Seamlessly</h2>
+            <div class="accent-line centered"></div>
+            <p style="font-size: 1rem; color: #a0a0a0; max-width: 600px; text-align:center; margin: 0 auto;">
+                A robust suite of devices dedicated to high-fidelity telemetry data logging.</p>
+            <div class="grid" id="hw-boxes" style="margin-top: 30px;">
+                <div class="inner-box hover-trigger" onclick="showHardwareDetail(1)">
+                    <h3>4x Measurement Unit</h3>
+                    <p style="font-size: 0.95rem;">Equipped with linear displacement sensors mounted parallel to the
+                        dampers, these units accurately record suspension travel over time. Integrated accelerometers
+                        simultaneously capture sprung mass acceleration across three axes.</p>
+                    <svg class="expand-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </div>
+                <div class="inner-box hover-trigger" onclick="showHardwareDetail(2)">
+                    <h3>Central Control Unit</h3>
+                    <p style="font-size: 0.95rem;">Acts as the wireless hub, synchronizing all measurement units
+                        effortlessly. Collected data is then efficiently transferred to your PC via <strong>USB</strong>
+                        or <strong>Wi-Fi</strong>.</p>
+                    <svg class="expand-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="detail-panel" id="hw-detail-panel">
+                <div class="detail-content" id="hw-detail-1">
+                    <figure>
+                        <table class="striped">
+                            <tbody>
+                                <tr>
+                                    <th scope="row" style="width: 40%;">Sampling Rate</th>
+                                    <td>200 Hz</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">A/D Resolution (Travel)</th>
+                                    <td>16-bit (65,536 levels)</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Accelerometer Range</th>
+                                    <td>Up to 16 G</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Power Source</th>
+                                    <td>Integrated Li-Ion battery (12 hours of continuous use)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </figure>
+                    <p>The standard package includes <a href="#" onclick="openModal('../KPC1-250.png'); return false;"
+                            class="detail-link">KPC1-250</a> linear potentiometric sensors with 250 mm stroke distance
+                        and rod end bearings for straightforward parallel mounting alongside the damper. Iintegration of
+                        compact sensors utilized in ECAS systems is currently being tested.</p>
+                </div>
+                <div class="detail-content" id="hw-detail-2">
+                    <figure>
+                        <table class="striped">
+                            <tbody>
+                                <tr>
+                                    <th scope="row" style="width: 40%;">Touch Interface</th>
+                                    <td>4.3" LCD (800x480 resolution)</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Onboard Storage</th>
+                                    <td>Capacity for approx. 17,000 minutes of telemetry</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Connectivity</th>
+                                    <td>USB-C (charging/data) & Wi-Fi</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Power Source</th>
+                                    <td>Integrated Li-Ion battery (15 hours of continuous use)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </figure>
+                    <p>Wireless communication with the measurement units drastically simplifies vehicle installation.
+                        Furthermore, the entire ShockMatiK system operates completely independent of the vehicle's
+                        electrical network.</p>
+                </div>
+            </div>
+
+            <div class="image-stack hw-image-stack is-active show-hw-default">
+                <div class="hw-image-group hw-group-default">
+                    <img src="../pixle.png" alt="Measurement Unit" class="telemetry-image"
+                        onclick="openModal(this.src)">
+                    <img src="../vp.png" alt="Control Unit" class="telemetry-image" onclick="openModal(this.src)">
+                </div>
+
+                <div class="hw-image-group hw-group-1">
+                    <img src="../pixla.png" alt="Measurement Unit Detail" class="telemetry-image"
+                        onclick="openModal(this.src)">
+                    <img src="../pixle.png" alt="System Overview" class="telemetry-image" onclick="openModal(this.src)">
+                </div>
+
+                <div class="hw-image-group hw-group-2">
+                    <img src="../vp.png" alt="Control Unit" class="telemetry-image" onclick="openModal(this.src)">
+                    <img src="../lcd.png" alt="Interface Detail" class="telemetry-image" onclick="openModal(this.src)">
+                </div>
+            </div>
+        </section>
+
+        <section class="tech-card software-card">
+            <h2 style="text-align: center; margin-bottom: 10px;">Software: ShockMatiK Suite</h2>
+            <div class="accent-line centered"></div>
+            <p style="font-size: 1rem; color: #a0a0a0; max-width: 600px; text-align:center; margin: 0 auto;">
+                A powerful toolset tailored for analyzing and managing your telemetry data.</p>
+            <div class="grid" id="sw-boxes" style="margin-top: 30px;">
+                <div class="inner-box hover-trigger trigger-1" onclick="showSoftwareDetail(1)">
+                    <h3>Project Manager</h3>
+                    <p style="font-size: 0.95rem;">A dedicated Windows desktop application designed to streamline the
+                        downloading and organization of hardware data. It allows for efficient project-based sorting and
+                        the addition of crucial context to every run.</p>
+                    <svg class="expand-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </div>
+                <div class="inner-box hover-trigger trigger-2" onclick="showSoftwareDetail(2)">
+                    <h3>Telemetry Analyzer</h3>
+                    <p style="font-size: 0.95rem;">Your primary environment for data visualization. It features
+                        interactive measurement cursors for automatic frequency calculation (sprung/unsprung mass) and
+                        mathematical filtering to isolate critical damper movements from track noise.</p>
+                    <svg class="expand-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="detail-panel" id="sw-detail-panel">
+                <div class="detail-content" id="sw-detail-1">
+                    <figure>
+                        <table class="striped">
+                            <tbody>
+                                <tr>
+                                    <th scope="row" style="width: 40%;">Data Retrieval</th>
+                                    <td>USB, Wi-Fi</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Organization Structure</th>
+                                    <td>Local database, hierarchical sorting by team and vehicle</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Supported Metadata</th>
+                                    <td>Timestamp, damper setup (clicks), track surface, driver feedback</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">OS Compatibility</th>
+                                    <td>Windows 7 / 8 / 10 / 11</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </figure>
+                    <p>Consider the Project Manager the central hub for your testing program, built to prevent data loss
+                        and file clutter. It provides a straightforward interface for pulling records from the hardware
+                        unit and organizing them logically—whether by specific chassis, driver, or circuit.</p>
+                    <p>Crucially, you can attach detailed notes to every session. Log your current compression and
+                        rebound settings, weather conditions, or specific track events (like a heavy braking zone or a
+                        curb strike). This ensures you know exactly which mechanical adjustment caused a specific change
+                        in handling when reviewing the data later in the Telemetry Analyzer.</p>
+                </div>
+                <div class="detail-content" id="sw-detail-2">
+                    <figure>
+                        <table class="striped">
+                            <tbody>
+                                <tr>
+                                    <th scope="row" style="width: 40%;">Signal Processing</th>
+                                    <td>Mathematical filtering to eliminate high-frequency noise</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Visualization Engine</th>
+                                    <td>Interactive plotting with precise X/Y zooming and panning</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Analysis Tools</th>
+                                    <td>Dual cursors with instant oscillation frequency calculation (Hz)</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Data Perspective</th>
+                                    <td>Toggle between individual damper travel and chassis acceleration</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </figure>
+                    <p>The Telemetry Analyzer is the core of the suite, optimized for rapid evaluation of raw track
+                        data. It translates suspension movement into clear, interactive graphs. You can easily navigate
+                        the timeline, zoom in on micro-events, and dissect critical sections of a lap, such as a jump
+                        landing or corner entry.</p>
+                    <p>The integrated measurement cursors are invaluable for setup tuning. By snapping them to
+                        consecutive peaks on the graph, the software instantly calculates the exact oscillation
+                        frequency of the suspension. If the raw sensor data is cluttered by engine vibration or rough
+                        tarmac, applying the built-in mathematical smoothing provides a clean curve, highlighting only
+                        the fundamental motion of the damper.</p>
+                </div>
+            </div>
+
+            <div class="image-stack sw-image-stack is-active show-sw-default">
+                <img src="../telemetry_med_2.png" alt="Telemetry Analyzer Interface" class="telemetry-image img-default"
+                    onclick="openModal(this.src)">
+
+                <img src="../SM_Suite.png" alt="Project Manager Overview" class="telemetry-image img-1"
+                    onclick="openModal(this.src)">
+
+                <img src="../telemetry_med_2.png" alt="Telemetry Analyzer Interface" class="telemetry-image img-2"
+                    onclick="openModal(this.src)">
+            </div>
+            <div class="buttons-container" style="text-align: center; margin-top: 40px; margin-bottom: 10px;">
+                <a href="https://github.com/V-Sip/ShockMatiK_Suite/releases/download/v1.4.1/ShockMatiK_Suite_setup_v1.4.1.exe"
+                    role="button" class="contrast" style="font-weight: bold; letter-spacing: 1px;">Download
+                    ShockMatiK Suite</a>
+            </div>
+        </section>
+
+        <article
+            style="text-align: center; margin-top: 40px; padding: 40px 20px; max-width: 600px; margin-left: auto; margin-right: auto; border: 1px solid rgba(255, 255, 255, 0.1);">
+            <p style="margin-bottom: 0; color: #a0a0a0;">
+                For technical inquiries and pricing, please contact us at:<br>
+                <a href="mailto:info@shockmatik.com"
+                    style="display: inline-block; margin-top: 15px; font-size: 1.2rem; font-weight: bold; letter-spacing: 1px;">
+                    info@shockmatik.com
+                </a>
+            </p>
+        </article>
+    </main>
+
+    <div id="imageModal" class="modal-overlay" onclick="closeModal()">
+        <img id="modalImage" src="" alt="Enlarged view">
+    </div>
+
+    <footer class="container" style="text-align: center; margin-top: 20px; padding-bottom: 40px; opacity: 0.5;">
+        <small>© 2026 Václav Šíp. All rights reserved.</small>
+    </footer>
+    <script src="../script.js"></script>
+
+</body>
+
+</html>
