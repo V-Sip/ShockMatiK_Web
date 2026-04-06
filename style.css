@@ -162,8 +162,10 @@ body {
 }
 
 .buttons-container {
-    position: relative;
-    z-index: 10;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    gap: 20px;
 }
 
 
@@ -260,6 +262,14 @@ body {
         grid-template-columns: 1fr; 
     }
     .accent-line {
-        width: 80px;
+        width: 70%;
+    }
+
+    .buttons-container {
+        flex-direction: column; 
+        gap: 15px; 
+    }
+    .buttons-container a {
+        width: 100%;
     }
 }
