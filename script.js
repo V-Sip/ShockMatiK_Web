@@ -17,7 +17,7 @@ function showSoftwareDetail(detailNumber) {
 
         clickedBox.classList.add('is-active');
         panel.classList.add('is-active');
-        document.getElementById('sw-detail-' + detailNumber).classList.add('is-active'); // Ukáže správnej text
+        document.getElementById('sw-detail-' + detailNumber).classList.add('is-active');
 
         stack.classList.remove('show-sw-default', 'show-img-1', 'show-img-2');
         stack.classList.add('show-img-' + detailNumber);
