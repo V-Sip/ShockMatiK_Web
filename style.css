@@ -9,12 +9,13 @@
 }
 
 body {
-    background-image: 
+    background-image:
         linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
     background-size: 30px 30px;
     background-attachment: fixed;
 }
+
 
 /* =========================================
    pismenka
@@ -25,7 +26,8 @@ body {
     letter-spacing: 2px;
     background: -webkit-linear-gradient(#ffffff, #888888);
     background-clip: text;
-    -webkit-background-clip: text; /* pro jablicka prej */
+    -webkit-background-clip: text;
+    /* pro jablicka prej */
     -webkit-text-fill-color: transparent;
     margin-bottom: 0.5rem;
 }
@@ -60,9 +62,12 @@ body {
 }
 
 .inner-box {
-    background: rgba(0,0,0,0.2);
+    background: rgba(0, 0, 0, 0.2);
     padding: 20px;
     border-radius: 8px;
+    position: relative;
+    padding-bottom: 45px;
+    transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .inner-box h3 {
@@ -71,10 +76,33 @@ body {
 }
 
 .highlight-box {
-    background: rgba(0,0,0,0.3); 
-    padding: 20px; 
+    background: rgba(0, 0, 0, 0.3);
+    padding: 20px;
     border-radius: 8px;
     border-left: 4px solid var(--pico-primary);
+}
+
+.expand-arrow {
+    position: absolute;
+    bottom: 15px;
+    right: 20px;
+    width: 24px;
+    height: 24px;
+    color: #a0a0a0;
+    opacity: 0.5;
+    transition: opacity 0.3s ease, transform 0.3s ease, color 0.3s ease;
+}
+
+.inner-box:hover .expand-arrow {
+    opacity: 1;
+    color: var(--pico-primary);
+    transform: translateY(3px);
+}
+
+.inner-box.is-active .expand-arrow {
+    opacity: 1;
+    color: var(--pico-primary);
+    transform: rotate(180deg);
 }
 
 .tech-list li {
@@ -88,9 +116,60 @@ body {
 }
 
 /* =========================================
+   panel s detajlama
+   ========================================= */
+.detail-panel {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.6s ease, opacity 0.4s ease, margin 0.6s ease, padding 0.6s ease;
+    width: 100%;
+    background: transparent;
+}
+
+.detail-panel.is-active {
+    max-height: 800px;
+    opacity: 1;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+}
+
+.detail-panel .detail-content {
+    display: none;
+}
+
+.detail-panel .detail-content.is-active {
+    display: block;
+}
+
+.detail-link {
+    color: var(--pico-primary);
+    text-decoration: none;
+    border-bottom: 1px dashed var(--pico-primary);
+    transition: border-bottom-style 0.3s ease;
+    cursor: pointer;
+}
+
+.detail-link:hover {
+    border-bottom-style: solid;
+    text-decoration: none;
+}
+
+.inner-box.is-active {
+    border-color: var(--pico-primary);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    background-color: var(--pico-card-background-color);
+}
+
+
+/* =========================================
    vopicarny hejbaci
    ========================================= */
-
 .hover-trigger {
     cursor: default;
     transition: background 0.3s ease, border-color 0.3s ease;
@@ -114,20 +193,30 @@ body {
     perspective: 1000px;
 }
 
+.grid:has(.inner-box.is-active) .inner-box:not(.is-active) {
+    opacity: 0.4;
+    transform: scale(0.98);
+    filter: grayscale(30%);
+}
+
+
+/* =========================================
+   vobrazky (Software)
+   ========================================= */
 .telemetry-image {
     grid-column: 1;
     grid-row: 1;
     justify-self: center;
     border-radius: 8px;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.6);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
     max-width: 100%;
     height: auto;
-    cursor: zoom-in; 
+    cursor: zoom-in;
     opacity: 0;
-    transform: rotateX(45deg) scale(0.9);
+    transform: scale(0.9);
     transition: opacity 0.5s ease, transform 0.6s ease-out;
-    pointer-events: none; 
+    pointer-events: none;
 }
 
 /* rozvali stverec kdyz nafasuje tridu .is-active */
@@ -145,27 +234,73 @@ body {
 
 .image-stack.show-sw-default .img-default {
     opacity: 1;
-    transform: rotateX(0deg) rotateY(0deg);
+    transform: scale(1);
     pointer-events: auto;
 }
 
 .image-stack.show-img-1 .img-1 {
     opacity: 1;
-    transform: rotateX(0deg) rotateY(0deg);
-    pointer-events: auto; 
+    transform: scale(1);
+    pointer-events: auto;
 }
 
 .image-stack.show-img-2 .img-2 {
     opacity: 1;
-    transform: rotateX(0deg) rotateY(0deg);
-    pointer-events: auto; 
+    transform: scale(1);
+    pointer-events: auto;
 }
 
 .buttons-container {
     display: flex;
-    justify-content: center; 
+    justify-content: center;
     align-items: center;
     gap: 20px;
+}
+
+
+/* =========================================
+   dvojty vobrazky (Hardware)
+   ========================================= */
+.hw-image-group {
+    grid-column: 1;
+    grid-row: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.5s ease, transform 0.6s ease-out;
+    pointer-events: none;
+}
+
+
+.hw-image-group .telemetry-image {
+    opacity: 1;
+    transform: none;
+    grid-column: auto;
+    grid-row: auto;
+    pointer-events: inherit;
+}
+
+/* default */
+.hw-image-stack.show-hw-default .hw-group-default {
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: auto;
+}
+
+/* pixle */
+.hw-image-stack.show-hw-1 .hw-group-1 {
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: auto;
+}
+
+/* vp */
+.hw-image-stack.show-hw-2 .hw-group-2 {
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: auto;
 }
 
 
@@ -181,14 +316,14 @@ body {
     background: rgba(10, 14, 20, 0.7);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    z-index: 9999; 
+    z-index: 9999;
     display: flex;
     justify-content: center;
     align-items: center;
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s ease;
-    cursor: zoom-out; 
+    cursor: zoom-out;
 }
 
 .modal-overlay.is-open {
@@ -196,13 +331,12 @@ body {
     pointer-events: all;
 }
 
-
 #modalImage {
-    max-width: 90vw; 
-    max-height: 90vh; 
+    max-width: 90vw;
+    max-height: 90vh;
     border-radius: 12px;
-    border: 1px solid rgba(255, 87, 34, 0.3); 
-    box-shadow: 0 25px 50px rgba(0,0,0,0.8); 
+    border: 1px solid rgba(255, 87, 34, 0.3);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.8);
     transform: scale(0.9);
     transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
@@ -211,64 +345,22 @@ body {
     transform: scale(1);
 }
 
-/* =========================================
-   dvojty vobrazky (Hardware)
-   ========================================= */
-.hw-image-group {
-    grid-column: 1;
-    grid-row: 1;
-    display: grid;
-    grid-template-columns: 1fr 1fr; 
-    gap: 20px; 
-    opacity: 0;
-    transform: rotateX(45deg) scale(0.9);
-    transition: opacity 0.5s ease, transform 0.6s ease-out;
-    pointer-events: none; 
-}
-
-
-.hw-image-group .telemetry-image {
-    opacity: 1;
-    transform: none;
-    grid-column: auto;
-    grid-row: auto;
-    pointer-events: inherit;
-}
-/* default */
-.hw-image-stack.show-hw-default .hw-group-default {
-    opacity: 1;
-    transform: rotateX(0deg) rotateY(0deg);
-    pointer-events: auto;
-}
-/* pixle */
-.hw-image-stack.show-hw-1 .hw-group-1 {
-    opacity: 1;
-    transform: rotateX(0deg) rotateY(0deg);
-    pointer-events: auto;
-}
-
-/* vp */
-.hw-image-stack.show-hw-2 .hw-group-2 {
-    opacity: 1;
-    transform: rotateX(0deg) rotateY(0deg);
-    pointer-events: auto;
-}
-
-
 
 
 @media (max-width: 768px) {
     .hw-image-group {
-        grid-template-columns: 1fr; 
+        grid-template-columns: 1fr;
     }
+
     .accent-line {
         width: 70%;
     }
 
     .buttons-container {
-        flex-direction: column; 
-        gap: 15px; 
+        flex-direction: column;
+        gap: 15px;
     }
+
     .buttons-container a {
         width: 100%;
     }

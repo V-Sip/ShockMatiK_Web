@@ -37,20 +37,86 @@
             <div class="accent-line centered"></div>
             <p style="font-size: 1rem; color: #a0a0a0; max-width: 600px; text-align:center; margin: 0 auto;">
                 Souprava zařízení pro záznam telemetrických dat.</p>
-            <div class="grid" style="margin-top: 30px;">
-                <div class="inner-box hover-trigger hw-trigger-1" onclick="showHardwareImage(1)">
+
+            <div class="grid" id="hw-boxes" style="margin-top: 30px;">
+                <div class="inner-box hover-trigger" onclick="showHardwareDetail(1)">
                     <h3>4x Měřicí jednotka</h3>
                     <p style="font-size: 0.95rem;">Pomocí lineárních snímačů, připevněných paralelně k tlumičům,
                         zaznamenávají jejich zdvih v čase a díky vestavěným akcelerometrům také snímají zrychlení
-                        odpružené hmoty ve třech osách.
-                    </p>
+                        odpružené hmoty ve třech osách.</p>
+                    <svg class="expand-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
                 </div>
-                <div class="inner-box hover-trigger hw-trigger-2" onclick="showHardwareImage(2)">
+
+                <div class="inner-box hover-trigger" onclick="showHardwareDetail(2)">
                     <h3>Centrální řídicí jednotka</h3>
-                    <p style="font-size: 0.95rem;">Bezdrátově řídí a synchronizuje všechny měřicí jednotky.
-                        Nasbíraná data následně přenese do počítače pomocí <strong>USB</strong> nebo bezdrátově přes
+                    <p style="font-size: 0.95rem;">Bezdrátově řídí a synchronizuje všechny měřicí jednotky. Nasbíraná
+                        data následně přenese do počítače pomocí <strong>USB</strong> nebo bezdrátově přes
                         <strong>Wi-Fi</strong>.
                     </p>
+                    <svg class="expand-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="detail-panel" id="hw-detail-panel">
+                <div class="detail-content" id="hw-detail-1">
+                    <figure>
+                        <table class="striped">
+                            <tbody>
+                                <tr>
+                                    <th scope="row" style="width: 40%;">Vzorkovací frekvence</th>
+                                    <td>200 Hz</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Rozlišení A/D převodníku pro zdvih tlumiče</th>
+                                    <td>16-bit (65536 úrovní)</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Citlivost akcelerometru</th>
+                                    <td>až 16 G</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Napájení</th>
+                                    <td>Integrovaný Li-Ion akumulátor (výdrž 12 hod)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </figure>
+                    <p>V základní sadě dodáváno s lineárními potenciometrickými snímači <a href="#"
+                            onclick="openModal('KPC1-250.png'); return false;" class="detail-link">KPC1-250</a> s
+                        rozsahem 250 mm a kulovými zakončeními pro montáž paralelně k tlumiči. V současné době také
+                        probíhá testování využití kompaktních snímačů používaných v systémech ECAS.</p>
+                </div>
+                <div class="detail-content" id="hw-detail-2">
+                    <figure>
+                        <table class="striped">
+                            <tbody>
+                                <tr>
+                                    <th scope="row" style="width: 40%;">Dotykový LCD Displej</th>
+                                    <td>4,3" 800x480</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Integrovaná paměť</th>
+                                    <td>cca 17 tisíc minut záznamu</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Konektivita</th>
+                                    <td>USB-C pro nabíjení a přenost dat + Wi-Fi</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Napájení</th>
+                                    <td>Integrovaný Li-Ion akumulátor (výdrž 15 hod)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </figure>
+                    <p>S měřicími jednotkami komunikuje bezdrátově, čímž usnadňuje montáž. Celý systém je zcela izolován
+                        od palubní sítě vozu.</p>
                 </div>
             </div>
 
@@ -81,32 +147,104 @@
             <div class="accent-line centered"></div>
             <p style="font-size: 1rem; color: #a0a0a0; max-width: 600px; text-align:center; margin: 0 auto;">
                 Sada nástrojů pro zpracování a analýzu telemetrických dat.</p>
-            <div class="grid" style="margin-top: 30px;">
-                <div class="inner-box hover-trigger trigger-1" onclick="showSoftwareImage(1)">
+            <div class="grid" id="sw-boxes" style="margin-top: 30px;">
+                <div class="inner-box hover-trigger trigger-1" onclick="showSoftwareDetail(1)">
                     <h3>Project manager</h3>
                     <p style="font-size: 0.95rem;">Desktopová aplikace pro Windows, která slouží ke stažení a organizaci
                         naměřených dat z hardwarové jednotky. Umožňuje efektivní třídění dat do projektů a ukládání
                         doplňujicích detailů k jednotlivým měřením.</p>
+                    <svg class="expand-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
                 </div>
-                <div class="inner-box hover-trigger trigger-2" onclick="showSoftwareImage(2)">
+                <div class="inner-box hover-trigger trigger-2" onclick="showSoftwareDetail(2)">
                     <h3>Telemetry Analyzer</h3>
                     <p style="font-size: 0.95rem;">Integrovaný analytický nástroj pro intuitivní vizualizaci dat a
                         jejich vyhodnocení. Disponuje měřícími kurzory s automatickým výpočtem frekvence kmitání
                         odpružené i neodpružené hmoty a pokročilými matematickými metodami pro eliminaci nepodstatných
                         vibrací.
                     </p>
+                    <svg class="expand-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
                 </div>
             </div>
 
-            <div class="buttons-container" style="text-align: center; margin-top: 40px; margin-bottom: 10px;">
-                <a href="https://github.com/V-Sip/ShockMatiK_Suite/releases/download/v1.4.1/ShockMatiK_Suite_setup_v1.4.1.exe"
-                    role="button" class="contrast" style="font-weight: bold; letter-spacing: 1px;">Stáhnout
-                    ShockMatiK Suite</a>
-                <a href="details.html" role="button" class="secondary outline">Podrobná
-                    technická specifikace</a>
-            </div>
-            <div class="image-stack sw-image-stack is-active show-sw-default">
+            <div class="detail-panel" id="sw-detail-panel">
+                <div class="detail-content" id="sw-detail-1">
+                    <figure>
+                        <table class="striped">
+                            <tbody>
+                                <tr>
+                                    <th scope="row" style="width: 40%;">Přenos dat</th>
+                                    <td>USB, Wi-Fi</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Architektura ukládání</th>
+                                    <td>Lokální databáze, třídění dle týmů a vozidel</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Metadata záznamu</th>
+                                    <td>Datum, čas, nastavení podvozku (klikání), povrch, poznámky</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Kompatibilita OS</th>
+                                    <td>Windows 7 / 8 / 10 / 11</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </figure>
 
+                    <p>Aplikace slouží jako centrální mozek pro všechny testovací jízdy.
+                        Minimalizuje riziko ztráty dat a chaosu v souborech. Obsahuje modul pro stahování záznamů z
+                        hadwarové jednotky a umožňuje jejich třídění do logických celků (např. podle
+                        konkrétního vozu, jezdce nebo okruhu).</p>
+                    <p>Ke každému jednotlivému záznamu můžete ručně zadat detailní poznámky – například aktuální
+                        nastavení komprese a odskoku tlumičů, typ povrchu, počasí nebo specifické události během jízdy
+                        (tvrdé brzdění, doskok z výjezdu atd.).
+                        Při pozdější analýze v Telemetry Analyzeru tak přesně víte, jaká mechanická úprava vedla k
+                        danému chování podvozku.</p>
+                </div>
+
+                <div class="detail-content" id="sw-detail-2">
+                    <figure>
+                        <table class="striped">
+                            <tbody>
+                                <tr>
+                                    <th scope="row" style="width: 40%;">Vyhlazení dat</th>
+                                    <td>Aplikace matematických filtrů pro odstranění šumu a vibrací</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Vizualizace</th>
+                                    <td>Interaktivní grafy s možností zoomování a posouvání na ose X/Y</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Měřicí nástroje</th>
+                                    <td>Duální kurzory s automatickým výpočtem frekvence kmitání (v Hz)</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Práce s daty</th>
+                                    <td>Snadné přepínání mezi senzory a zobrazení zrychlení šasi</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </figure>
+
+                    <p>Jádro celého softwaru, optimalizované pro rychlou a přehlednou práci se surovými daty z trati.
+                        Program vykreslí křivky všech tlumičů do interaktivního grafu, ve kterém se lze volně pohybovat,
+                        přibližovat detaily a zkoumat kritická místa průjezdu (například doskok nebo tvrdé brzdění).</p>
+                    <p>Největším pomocníkem jsou měřicí kurzory. Stačí je umístit na dvě po sobě jdoucí špičky v grafu a
+                        aplikace okamžitě spočítá přesnou frekvenci kmitání odpružené i neodpružené hmoty. Pokud je
+                        křivka ze snímačů příliš "chlupatá" od vysokofrekvenčních vibrací (nerovnosti asfaltu, motor),
+                        lze aplikovat integrované matematické vyhlazení. Graf se tím vyčistí a jasně ukáže pouze
+                        podstatný pohyb samotného tlumiče.</p>
+
+                </div>
+            </div>
+
+            <div class="image-stack sw-image-stack is-active show-sw-default">
                 <img src="telemetry_med_2.png" alt="Ukázka Telemetry Analyzer" class="telemetry-image img-default"
                     onclick="openModal(this.src)">
 
@@ -116,7 +254,22 @@
                 <img src="telemetry_med_2.png" alt="Ukázka Telemetry Analyzer" class="telemetry-image img-2"
                     onclick="openModal(this.src)">
             </div>
+            <div class="buttons-container" style="text-align: center; margin-top: 40px; margin-bottom: 10px;">
+                <a href="https://github.com/V-Sip/ShockMatiK_Suite/releases/download/v1.4.1/ShockMatiK_Suite_setup_v1.4.1.exe"
+                    role="button" class="contrast" style="font-weight: bold; letter-spacing: 1px;">Stáhnout
+                    ShockMatiK Suite</a>
+            </div>
         </section>
+        <article
+            style="text-align: center; margin-top: 40px; padding: 40px 20px; max-width: 600px; margin-left: auto; margin-right: auto; border: 1px solid rgba(255, 255, 255, 0.1);">
+            <p style="margin-bottom: 0; color: #a0a0a0;">
+                Pro dotazy a nezávaznou poptávku kontaktujte<br>
+                <a href="mailto:info@shockmatik.com"
+                    style="display: inline-block; margin-top: 15px; font-size: 1.2rem; font-weight: bold; letter-spacing: 1px;">
+                    info@shockmatik.com
+                </a>
+            </p>
+        </article>
     </main>
 
     <div id="imageModal" class="modal-overlay" onclick="closeModal()">
@@ -124,8 +277,7 @@
     </div>
 
     <footer class="container" style="text-align: center; margin-top: 20px; padding-bottom: 40px; opacity: 0.5;">
-        <small>© 2026 Václav Šíp. Všechna práva vyhrazena. | Kontakt: <a href="mailto:info@shockmatik.com"
-                style="color: var(--pico-primary);">info@shockmatik.com</a></small>
+        <small>© 2026 Václav Šíp. Všechna práva vyhrazena.</small>
     </footer>
     <script src="script.js"></script>
 
