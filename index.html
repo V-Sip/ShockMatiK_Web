@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <html lang="cs" data-theme="dark">
-<!-- Co tu hledas, loupezniku? -->
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,7 +18,7 @@
     <meta property="og:url" content="https://shockmatik.com/">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="https://shockmatik.com/telemetry_med_2.png">
+    <meta name="twitter:image" content="https://shockmatik.com/telemetry_med_3.png">
     <script data-goatcounter="https://shockmatik.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
 </head>
@@ -59,9 +57,8 @@
                 </div>
                 <div class="inner-box hover-trigger" onclick="showHardwareDetail(2)">
                     <h3>Centrální řídicí jednotka</h3>
-                    <p style="font-size: 0.95rem;">Bezdrátově řídí a synchronizuje všechny měřicí jednotky. Nasbíraná
-                        data následně přenese do počítače pomocí <strong>USB</strong> nebo bezdrátově přes
-                        <strong>Wi-Fi</strong>.
+                    <p style="font-size: 0.95rem;">Bezdrátově řídí a synchronizuje všechny měřicí jednotky. Díky <strong>25Hz GPS</strong> modulu navíc precizně zaznamenává polohu a rychlost na trati. Nasbíraná
+                        data následně přenese do PC pomocí <strong>USB</strong> nebo <strong>Wi-Fi</strong>.
                     </p>
                     <svg class="expand-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -105,6 +102,10 @@
                                 <tr>
                                     <th scope="row" style="width: 40%;">Dotykový LCD Displej</th>
                                     <td>4,3" 800x480</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">GPS / Lokace</th>
+                                    <td>Integrovaný 25Hz GNSS přijímač</td>
                                 </tr>
                                 <tr>
                                     <th scope="row">Integrovaná paměť</th>
@@ -163,10 +164,7 @@
                 </div>
                 <div class="inner-box hover-trigger trigger-2" onclick="showSoftwareDetail(2)">
                     <h3>Telemetry Analyzer</h3>
-                    <p style="font-size: 0.95rem;">Integrovaný analytický nástroj pro intuitivní vizualizaci dat a
-                        jejich vyhodnocení. Disponuje měřícími kurzory s automatickým výpočtem frekvence kmitání
-                        odpružené i neodpružené hmoty a pokročilými matematickými metodami pro eliminaci nepodstatných
-                        vibrací.
+                    <p style="font-size: 0.95rem;">Integrovaný analytický nástroj pro intuitivní vizualizaci dat. Nabízí GPS mapování se satelitními snímky, precizní analýzu zrychlení samotných tlumičů, výpočty frekvence kmitání a pokročilé DSP filtry.
                     </p>
                     <svg class="expand-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -214,43 +212,37 @@
                         <table class="striped">
                             <tbody>
                                 <tr>
-                                    <th scope="row" style="width: 40%;">Vyhlazení dat</th>
-                                    <td>Aplikace matematických filtrů pro odstranění šumu a vibrací</td>
+                                    <th scope="row" style="width: 40%;">GPS & Mapy</th>
+                                    <td>Zobrazení trasy na satelitních snímcích, rychlostní profil, G-Force heatmapa</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Vyhodnocení dynamiky</th>
+                                    <td>Zrychlení pístnice tlumiče a duální kurzory pro výpočet frekvence (v Hz)</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Vyhlazení dat</th>
+                                    <td>Aplikace matematických filtrů (Butterworth, Savitzky-Golay) pro odstranění šumu</td>
                                 </tr>
                                 <tr>
                                     <th scope="row">Vizualizace</th>
-                                    <td>Interaktivní grafy s možností zoomování a posouvání na ose X/Y</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">Měřicí nástroje</th>
-                                    <td>Duální kurzory s automatickým výpočtem frekvence kmitání (v Hz)</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">Práce s daty</th>
-                                    <td>Snadné přepínání mezi senzory a zobrazení zrychlení šasi</td>
+                                    <td>Interaktivní grafy s možností zoomování a snadného přepínání mezi senzory</td>
                                 </tr>
                             </tbody>
                         </table>
                     </figure>
-                    <p>Jádro celého softwaru, optimalizované pro rychlou a přehlednou práci se surovými daty z trati.
-                        Program vykreslí křivky všech tlumičů do interaktivního grafu, ve kterém se lze volně pohybovat,
-                        přibližovat detaily a zkoumat kritická místa průjezdu (například doskok nebo tvrdé brzdění).</p>
-                    <p>Největším pomocníkem jsou měřicí kurzory. Stačí je umístit na dvě po sobě jdoucí špičky v grafu a
-                        aplikace okamžitě spočítá přesnou frekvenci kmitání odpružené i neodpružené hmoty. Pokud je
-                        křivka ze snímačů příliš "chlupatá" od vysokofrekvenčních vibrací (nerovnosti asfaltu, motor),
-                        lze aplikovat integrované matematické vyhlazení. Graf se tím vyčistí a jasně ukáže pouze
-                        podstatný pohyb samotného tlumiče.</p>
+                    <p>Jádro celého softwaru, optimalizované pro rychlou a přehlednou práci se surovými daty z trati. Z naměřeného zdvihu aplikace automaticky počítá <strong>okamžité zrychlení samotného tlumiče</strong>, takže v grafech přesně vidíte, jak rychle pístnice reaguje na kritické rázy (např. rolety, doskoky nebo prokluz kol při prudkém startu). Pro vyčištění křivky od nežádoucího šumu lze aplikovat pokročilé integrované DSP filtry.</p>
+                    <p>Zásadní funkcí je plná integrace <strong>GPS</strong> telemetrie. Celou jízdu si můžete nechat vykreslit přímo na satelitní mapě s interaktivní <strong>heatmapou</strong>, která barevně indikuje okamžitou rychlost. Grafy telemetrie jsou navíc časově synchronizované s indikátorem pozice na mapě.</p>
                 </div>
             </div>
 
             <div class="image-stack sw-image-stack is-active show-sw-default">
-                <img src="telemetry_med_2.png" alt="Ukázka Telemetry Analyzer" class="telemetry-image img-default"
+                <img src="telemetry_med_3.png" alt="Ukázka Telemetry Analyzer" class="telemetry-image img-default"
                     onclick="openModal(this.src)">
 
                 <img src="SM_Suite.png" alt="Zpracování a export dat" class="telemetry-image img-1"
                     onclick="openModal(this.src)">
 
-                <img src="telemetry_med_2.png" alt="Ukázka Telemetry Analyzer" class="telemetry-image img-2"
+                <img src="telemetry_med_3.png" alt="Ukázka Telemetry Analyzer" class="telemetry-image img-2"
                     onclick="openModal(this.src)">
             </div>
             <div class="buttons-container" style="text-align: center; margin-top: 40px; margin-bottom: 10px;">
@@ -281,7 +273,5 @@
     <script src="script.js"></script>
 
 </body>
-
-<!-- Nasels? -->
 
 </html>

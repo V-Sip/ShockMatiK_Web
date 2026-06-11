@@ -19,7 +19,7 @@
     <meta property="og:url" content="https://shockmatik.com/en/">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="https://shockmatik.com/telemetry_med_2.png">
+    <meta name="twitter:image" content="https://shockmatik.com/telemetry_med_3.png">
     <script data-goatcounter="https://shockmatik.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
 </head>
@@ -60,9 +60,7 @@
                 </div>
                 <div class="inner-box hover-trigger" onclick="showHardwareDetail(2)">
                     <h3>Central Control Unit</h3>
-                    <p style="font-size: 0.95rem;">Acts as the wireless hub, synchronizing all measurement units
-                        effortlessly. Collected data is then efficiently transferred to your PC via <strong>USB</strong>
-                        or <strong>Wi-Fi</strong>.</p>
+                    <p style="font-size: 0.95rem;">Acts as the wireless hub, synchronizing all measurement units effortlessly. Equipped with a <strong>25Hz GPS</strong> module, it precisely records track position and speed. Collected data is then efficiently transferred to your PC via <strong>USB</strong> or <strong>Wi-Fi</strong>.</p>
                     <svg class="expand-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <polyline points="6 9 12 15 18 9"></polyline>
@@ -106,6 +104,10 @@
                                 <tr>
                                     <th scope="row" style="width: 40%;">Touch Interface</th>
                                     <td>4.3" LCD (800x480 resolution)</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">GPS / Location</th>
+                                    <td>Integrated 25Hz GNSS receiver</td>
                                 </tr>
                                 <tr>
                                     <th scope="row">Onboard Storage</th>
@@ -166,9 +168,7 @@
                 </div>
                 <div class="inner-box hover-trigger trigger-2" onclick="showSoftwareDetail(2)">
                     <h3>Telemetry Analyzer</h3>
-                    <p style="font-size: 0.95rem;">Your primary environment for data visualization. It features
-                        interactive measurement cursors for automatic frequency calculation (sprung/unsprung mass) and
-                        mathematical filtering to isolate critical damper movements from track noise.</p>
+                    <p style="font-size: 0.95rem;">Your primary environment for data visualization. It offers GPS mapping with satellite imagery, precise damper acceleration analysis, oscillation frequency calculations, and advanced DSP filters.</p>
                     <svg class="expand-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <polyline points="6 9 12 15 18 9"></polyline>
@@ -213,44 +213,37 @@
                         <table class="striped">
                             <tbody>
                                 <tr>
-                                    <th scope="row" style="width: 40%;">Signal Processing</th>
-                                    <td>Mathematical filtering to eliminate high-frequency noise</td>
+                                    <th scope="row" style="width: 40%;">GPS & Maps</th>
+                                    <td>Track visualization on satellite imagery, speed profile, and G-Force heatmap</td>
                                 </tr>
                                 <tr>
-                                    <th scope="row">Visualization Engine</th>
-                                    <td>Interactive plotting with precise X/Y zooming and panning</td>
+                                    <th scope="row">Dynamics Evaluation</th>
+                                    <td>Damper shaft acceleration and dual cursors for frequency calculation (Hz)</td>
                                 </tr>
                                 <tr>
-                                    <th scope="row">Analysis Tools</th>
-                                    <td>Dual cursors with instant oscillation frequency calculation (Hz)</td>
+                                    <th scope="row">Data Smoothing</th>
+                                    <td>Application of mathematical filters (Butterworth, Savitzky-Golay) for noise reduction</td>
                                 </tr>
                                 <tr>
-                                    <th scope="row">Data Perspective</th>
-                                    <td>Toggle between individual damper travel and chassis acceleration</td>
+                                    <th scope="row">Visualization</th>
+                                    <td>Interactive graphs with zooming and easy switching between sensors</td>
                                 </tr>
                             </tbody>
                         </table>
                     </figure>
-                    <p>The Telemetry Analyzer is the core of the suite, optimized for rapid evaluation of raw track
-                        data. It translates suspension movement into clear, interactive graphs. You can easily navigate
-                        the timeline, zoom in on micro-events, and dissect critical sections of a lap, such as a jump
-                        landing or corner entry.</p>
-                    <p>The integrated measurement cursors are invaluable for setup tuning. By snapping them to
-                        consecutive peaks on the graph, the software instantly calculates the exact oscillation
-                        frequency of the suspension. If the raw sensor data is cluttered by engine vibration or rough
-                        tarmac, applying the built-in mathematical smoothing provides a clean curve, highlighting only
-                        the fundamental motion of the damper.</p>
+                    <p>As the core of the suite, the Telemetry Analyzer is built for rapid and intuitive processing of raw track data. The software automatically derives the <strong>instantaneous damper shaft acceleration</strong> directly from suspension travel. This lets you pinpoint exactly how the suspension handles critical events like washboards, heavy jump landings, or wheel spin under hard acceleration. To isolate these crucial movements from track noise, you can easily smooth out the data using our advanced built-in DSP filters.</p>
+                    <p>A major addition to the suite is fully integrated <strong>GPS</strong> telemetry. Your entire session is mapped onto high-resolution satellite imagery, featuring an interactive <strong>heatmap</strong> that visually represents your speed profile across the track. For ultimate context, all telemetry graphs are perfectly time-synced with your live position on the map.</p>
                 </div>
             </div>
 
             <div class="image-stack sw-image-stack is-active show-sw-default">
-                <img src="../telemetry_med_2.png" alt="Telemetry Analyzer Interface" class="telemetry-image img-default"
+                <img src="../telemetry_med_3.png" alt="Telemetry Analyzer Interface" class="telemetry-image img-default"
                     onclick="openModal(this.src)">
 
                 <img src="../SM_Suite.png" alt="Project Manager Overview" class="telemetry-image img-1"
                     onclick="openModal(this.src)">
 
-                <img src="../telemetry_med_2.png" alt="Telemetry Analyzer Interface" class="telemetry-image img-2"
+                <img src="../telemetry_med_3.png" alt="Telemetry Analyzer Interface" class="telemetry-image img-2"
                     onclick="openModal(this.src)">
             </div>
             <div class="buttons-container" style="text-align: center; margin-top: 40px; margin-bottom: 10px;">
